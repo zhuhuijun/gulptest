@@ -1,0 +1,28 @@
+{
+  "name": "gulptest",
+  "version": "1.0.0",
+  "description": "gulp test",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhuhuijun/gulptest"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "zhuhj",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhuhuijun/gulptest/issues"
+  },
+  "homepage": "https://github.com/zhuhuijun/gulptest",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
