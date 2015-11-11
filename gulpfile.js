@@ -5,7 +5,8 @@ var connect = require('gulp-connect');//实时刷新
 var concat = require('gulp-concat');//连接
 var uglify=require('gulp-uglify');//压缩
 var rename=require('gulp-rename');//重命名
-var minifycss =require('gulp-minify-css');
+var minifycss =require('gulp-minify-css');//压缩css
+var imagemin = require('gulp-imagemin');
 gulp.task('hello', function () {
     console.log('hello');
 });
@@ -63,6 +64,9 @@ gulp.task('concatjs', function () {
 });
 gulp.task('less1', function () {
     return gulp.src('app/css/*.less').pipe(less()).pipe(minifycss()).pipe(rename('page.min.css')).pipe(gulp.dest('dist/css'));
+});
+gulp.task('copypng1', function () {
+    return gulp.src('./app/images/*.{png,jpg}').pipe(imagemin()).pipe(gulp.dest('dist/images2'));
 });
 gulp.task('default', ['server', 'less', 'scss', 'watch'], function () {
     console.log('done');
