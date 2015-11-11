@@ -1,3 +1,4 @@
-/**
- * Created by Administrator on 15-11-3.
- */
+var js = function () {
+    console.log('js');
+};
+js();

@@ -5,6 +5,7 @@ var connect = require('gulp-connect');//实时刷新
 var concat = require('gulp-concat');//连接
 var uglify=require('gulp-uglify');//压缩
 var rename=require('gulp-rename');//重命名
+var minifycss =require('gulp-minify-css');
 gulp.task('hello', function () {
     console.log('hello');
 });
@@ -59,6 +60,9 @@ gulp.task('concatjs1', function () {
 });
 gulp.task('concatjs', function () {
     return gulp.src(['app/js/*.js']).pipe(concat('join.js')).pipe(uglify()).pipe(rename('join.min.js')).pipe(gulp.dest('dist/js'));
+});
+gulp.task('less1', function () {
+    return gulp.src('app/css/*.less').pipe(less()).pipe(minifycss()).pipe(rename('page.min.css')).pipe(gulp.dest('dist/css'));
 });
 gulp.task('default', ['server', 'less', 'scss', 'watch'], function () {
     console.log('done');
